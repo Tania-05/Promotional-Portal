@@ -1,0 +1,8 @@
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\bin\Portal.dll
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\bin\Portal.pdb
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\bin\Portal.xml
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\obj\Debug\Portal.Resources.resources
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\obj\Debug\Portal.vbproj.GenerateResource.Cache
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\obj\Debug\Portal.dll
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\obj\Debug\Portal.xml
+C:\vb\calculation\calculations\Promo Portal\Portal\Portal\obj\Debug\Portal.pdb
