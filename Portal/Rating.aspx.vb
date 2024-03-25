@@ -28,12 +28,12 @@ Public Class Rating
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         Radid.Items.Clear()
-        Radid.Items.Add("--Select--")
-        Radid.DataTextField = "City_name"
+
+        Radid.DataTextField = "Title"
         Radid.DataValueField = "Ad_id"
         Radid.DataSource = dt
         Radid.DataBind()
-
+        Radid.Items.Insert(0, "--Select--")
     End Sub
     Public Sub binduser()
         Dim str As String
@@ -43,10 +43,11 @@ Public Class Rating
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         Ruser.Items.Clear()
-        Ruser.Items.Add("--Select--")
+
         Ruser.DataTextField = "User_name"
         Ruser.DataValueField = "User_id"
         Ruser.DataSource = dt
         Ruser.DataBind()
+        Ruser.Items.Insert(0, "--Select--")
     End Sub
 End Class

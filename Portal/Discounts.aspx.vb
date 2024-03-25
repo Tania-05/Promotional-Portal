@@ -27,11 +27,12 @@ Public Class Discounts
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         disad.Items.Clear()
-        disad.Items.Add("--Select--")
+
         disad.DataTextField = "Title"
         disad.DataValueField = "Ad_id"
         disad.DataSource = dt
         disad.DataBind()
+        disad.Items.Insert(0, "--Select--")
     End Sub
 
 End Class

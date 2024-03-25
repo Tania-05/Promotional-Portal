@@ -1,8 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data
+Imports System.IO
+
 Public Class Images
     Inherits System.Web.UI.Page
     Dim co As test = New test
+    Dim pth, filename As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
@@ -11,13 +14,29 @@ Public Class Images
     End Sub
 
     Protected Sub btimg_Click(sender As Object, e As EventArgs) Handles btimg.Click
+        'Try
         Dim instr As String
-        instr = "insert into images(Ad_id,Image_Data)values(" + Imgad.SelectedValue + ",'" + Imgdata.Text + "')"
-        Dim cmduser As SqlCommand = New SqlCommand(instr, co.connect())
-        cmduser.ExecuteNonQuery()
-        Response.Write("<script>alert('data saved');</script>")
 
-        Imgdata.Text = ""
+        'Uploadfile()
+        If FileUpload1.HasFile Then
+            filename = Path.GetFileName(FileUpload1.PostedFile.FileName)
+            FileUpload1.PostedFile.SaveAs(Server.MapPath("~/image/") + filename)
+
+            pth = "~/image/" + filename
+            instr = "insert into images(Ad_id,Image_Data,Description)values(" + Imgad.SelectedValue + ",'" + pth + "','" + imgdes.Text + "')"
+            Dim cmduser As SqlCommand = New SqlCommand(instr, co.connect())
+            cmduser.ExecuteNonQuery()
+            Response.Write("<script>alert('data saved');</script>")
+        Else
+            Response.Write("<script>alert('Image Not Selected');</script>")
+        End If
+
+        'Catch
+        'Dim ex As Exception
+        'upload.Text = ex.Message
+        ' End Try
+
+
     End Sub
     Public Sub bindAd()
         Dim str As String

@@ -28,11 +28,12 @@ Public Class Payment
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         dpauser.Items.Clear()
-        dpauser.Items.Add("--Select--")
+
         dpauser.DataTextField = "User_name"
         dpauser.DataValueField = "User_id"
         dpauser.DataSource = dt
         dpauser.DataBind()
+        dpauser.Items.Insert(0, "--Select--")
     End Sub
     Public Sub bindAd()
         Dim str As String
@@ -42,11 +43,11 @@ Public Class Payment
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         pyad.Items.Clear()
-        pyad.Items.Add("--Select--")
+
         pyad.DataTextField = "Title"
         pyad.DataValueField = "Ad_id"
         pyad.DataSource = dt
         pyad.DataBind()
-
+        pyad.Items.Insert(0, "--Select--")
     End Sub
 End Class

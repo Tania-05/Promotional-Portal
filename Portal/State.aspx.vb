@@ -26,10 +26,11 @@ Public Class State
         Dim dc As DataTable = New DataTable
         sqldc.Fill(dc)
         txtscy.Items.Clear()
-        txtscy.Items.Add("--Select--")
+
         txtscy.DataTextField = "Country_name"
         txtscy.DataValueField = "Country_id"
         txtscy.DataSource = dc
         txtscy.DataBind()
+        txtscy.Items.Insert(0, "--Select--")
     End Sub
 End Class

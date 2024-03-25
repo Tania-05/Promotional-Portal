@@ -32,9 +32,10 @@ Public Class Social_Media
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         mediaad.Items.Clear()
-        mediaad.Items.Add("--Select--")
+
         mediaad.DataValueField = "Ad_id"
         mediaad.DataSource = dt
         mediaad.DataBind()
+        mediaad.Items.Insert(0, "--Select--")
     End Sub
 End Class

@@ -36,11 +36,12 @@ Public Class Ads
         Dim da As DataTable = New DataTable
         sqlda.Fill(da)
         dbid.Items.Clear()
-        dbid.Items.Add("--Select--")
+
         dbid.DataTextField = "Business_name"
         dbid.DataValueField = "Business_id"
         dbid.DataSource = da
         dbid.DataBind()
+        dbid.Items.Insert(0, "--Select--")
     End Sub
     Public Sub bindcategory()
         Dim str As String
@@ -50,11 +51,12 @@ Public Class Ads
         Dim db As DataTable = New DataTable
         sqlds.Fill(db)
         dcat.Items.Clear()
-        dcat.Items.Add("--Select--")
+
         dcat.DataTextField = "Category_name"
         dcat.DataValueField = "Category_id"
         dcat.DataSource = db
         dcat.DataBind()
+        dcat.Items.Insert(0, "--Select--")
     End Sub
     Public Sub bindadcy()
         Dim str As String
@@ -102,11 +104,12 @@ Public Class Ads
         Dim sqlda As SqlDataAdapter = New SqlDataAdapter(comr)
         Dim de As DataTable = New DataTable
         sqlda.Fill(de)
-        dadfea.Items.Clear()
-        dadfea.Items.Add("--Select--")
+        'dadfea.Items.Clear()
+
         dadfea.DataValueField = "Featured_id"
         dadfea.DataSource = de
         dadfea.DataBind()
+        dadfea.Items.Insert(0, "--Select--")
     End Sub
     Public Sub bindpackages()
         Dim str As String
@@ -116,11 +119,12 @@ Public Class Ads
         Dim dg As DataTable = New DataTable
         sqldt.Fill(dg)
         dpgid.Items.Clear()
-        dpgid.Items.Add("--Select--")
+
         dpgid.DataTextField = "Package_name"
         dpgid.DataValueField = "Package_id"
         dpgid.DataSource = dg
         dpgid.DataBind()
+        dpgid.Items.Insert(0, "--Select--")
     End Sub
 
     Protected Sub dadcy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dadcy.SelectedIndexChanged

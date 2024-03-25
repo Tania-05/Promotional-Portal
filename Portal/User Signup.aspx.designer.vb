@@ -11,7 +11,16 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Signup
+Partial Public Class User_Signup
+
+    '''<summary>
+    '''Head1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
 
     '''<summary>
     '''form1 control.
@@ -23,110 +32,74 @@ Partial Public Class Signup
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Label1 control.
+    '''Button2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Label2 control.
+    '''signInEmail control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents signInEmail As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''rgname control.
+    '''signInPassword control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rgname As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents signInPassword As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label3 control.
+    '''signUpName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents signUpName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''remail control.
+    '''signUpEmail control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents remail As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents signUpEmail As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Label4 control.
+    '''signUpPassword control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents signUpPassword As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''rpass control.
+    '''DropDown1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rpass As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDown1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Label5 control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''rtype control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rtype As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''btr control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btr As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Label6 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lkup control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lkup As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 End Class

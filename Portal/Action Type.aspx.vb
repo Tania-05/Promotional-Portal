@@ -9,4 +9,7 @@ Public Class Action_Type
     End Sub
 
    
+    Protected Sub btaction_Click(sender As Object, e As EventArgs) Handles btaction.Click
+
+    End Sub
 End Class

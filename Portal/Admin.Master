@@ -1,253 +1,601 @@
 ﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.master.vb" Inherits="Portal.Admin" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%--<html lang="en">--%>
+    <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-     <!-- basic -->
-     
-      <title>adpitor</title>
-     
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css"/>
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css"/>
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css"/>
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen"/>
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  <title>Promotional Portal</title>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
 
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon"/>
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet"/>
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet"/>
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet"/>
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet"/>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet"/>
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 10 2024 with Bootstrap v5.3.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
-<body class="main-layout">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
-      <!-- end loader -->
-      <div class="wrapper">
-         <!-- end loader -->
-         <div class="sidebar">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
-               <div id="dismiss">
-                  <i class="fa fa-arrow-left"></i>
-               </div>
-               <ul class="list-unstyled components">
-                  <li class="active">
-                     <a href="index.html">Home</a>
-                  </li>
-                  <li>
-                     <a href="#about">About</a>
-                  </li>
-                  <li>
-                     <a href="#review">Review</a>
-                  </li>
-                  <li>
-                     <a href="#contact">Conatct</a>
-                  </li>
-               </ul>
-            </nav>
-         </div>
-         <div id="content">
-            <!-- header -->
-            <header>
-               <!-- header inner -->
-               <div class="menu_sitbar">
-                  <ul class="menu">
-                     <li><button type="button" id="sidebarCollapse">
-                        <img src="images/menu_icon.png" alt="#" />
-                        </button></a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="header_full_banner">
-                  <div class="header">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                              <div class="full">
-                                 <div class="center-desk">
-                                    <div class="logo">
-                                       <a href="index.html"><img src="images/logo.png" alt="#" /></a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                              <ul class="btn">
-                                 <li class="login_btn"><a href="User Signin.aspx">Sign In</a></li>
-                                 <li><a href="User Signup.aspx">Sign Up</a></li>
-                                 <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- end header inner -->
-                  <!-- end header -->
-                  <!-- banner -->
-                  <section class="banner_main">
-                     <div class="container">
-                        <div class="row d_flex">
-                           <div class="col-md-126">
-                              <div class="text-bg">
-                                 <h1>Classified Ads</h1>
-                                 <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in</span>
-                                 <a href="#">Read More</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </section>
-               </div>
-            </header>
-            <!-- end banner -->
+<body>
 
-               <form id="form1" runat="server">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">BrandBlitz</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <!--<img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">-->
+            <span class="d-none d-md-block dropdown-toggle ps-2">Tania</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+       <%-- <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="Country.aspx">
+          <i class="bi bi-menu-button-wide"></i><span>Country  </span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>--%>
+       <%-- <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">--%>
+          <li>
+            <a class="nav-link collapsed"  a href="Country.aspx">
+               <i class="bi bi-menu-button-wide"></i><span>Country  </span>
+            </a>
+          </li>
+           <li>
+            <a class="nav-link collapsed"  a href="State.aspx">
+               <i class="bi bi-menu-button-wide"></i><span>State  </span>
+            </a>
+          </li> 
+          <li>
+            <a class="nav-link collapsed"  a href="City.aspx">
+               <i class="bi bi-menu-button-wide"></i><span>City  </span>
+            </a>
+          </li>
+           <li>
+            <a class="nav-link collapsed"  a href="City Wise Service.aspx">
+               <i class="bi bi-menu-button-wide"></i><span>City wise Listing  </span>
+            </a>
+          </li>
+           <li>
+            <a class="nav-link collapsed"  a href="Categories.aspx">
+               <i class="bi bi-menu-button-wide"></i><span>Category  </span>
+            </a>
+          </li>
+          
+          
+      </li>
+         <%-- <li>
+            <a href="components-accordion.html">
+              <i class="bi bi-circle"></i><span>Accordion</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-badges.html">
+              <i class="bi bi-circle"></i><span>Badges</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-breadcrumbs.html">
+              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-buttons.html">
+              <i class="bi bi-circle"></i><span>Buttons</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-cards.html">
+              <i class="bi bi-circle"></i><span>Cards</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-carousel.html">
+              <i class="bi bi-circle"></i><span>Carousel</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-list-group.html">
+              <i class="bi bi-circle"></i><span>List group</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-modal.html">
+              <i class="bi bi-circle"></i><span>Modal</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-tabs.html">
+              <i class="bi bi-circle"></i><span>Tabs</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-pagination.html">
+              <i class="bi bi-circle"></i><span>Pagination</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-progress.html">
+              <i class="bi bi-circle"></i><span>Progress</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-spinners.html">
+              <i class="bi bi-circle"></i><span>Spinners</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-tooltips.html">
+              <i class="bi bi-circle"></i><span>Tooltips</span>
+            </a>
+          </li>--%>
+         <%-- </ul>--%>
+        <!-- End Components Nav -->
+
+      <li class="nav-item">
+        <%--<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>--%>
+       <%-- <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">--%>
+          <li>
+            <a class="nav-link collapsed" href="Ad Packages.aspx">
+              <i class="bi bi-journal-text"></i><span>Packages</span>
+            </a>
+          </li>
+           <li>
+            <a class="nav-link collapsed" href="Free Ads.aspx">
+              <i class="bi bi-journal-text"></i><span>Free Ads</span>
+            </a>
+          </li> <li>
+            <a class="nav-link collapsed" href="Featured Business.aspx">
+              <i class="bi bi-journal-text"></i><span>Featured Business</span>
+            </a>
+          </li> <li>
+            <a class="nav-link collapsed" href="Discounts.aspx">
+              <i class="bi bi-journal-text"></i><span>Discounts</span>
+            </a>
+          </li> <li>
+            <a class="nav-link collapsed" href="Social Media.aspx">
+              <i class="bi bi-journal-text"></i><span>Social Media Interaction</span>
+            </a>
+          </li><li>
+            <a class="nav-link collapsed" href="Event Calendar.aspx">
+              <i class="bi bi-journal-text"></i><span>Event Calendar</span>
+            </a>
+          </li>
+          <%--<li>
+            <a href="forms-layouts.html">
+              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-editors.html">
+              <i class="bi bi-circle"></i><span>Form Editors</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-validation.html">
+              <i class="bi bi-circle"></i><span>Form Validation</span>
+            </a>
+          </li>--%>
+        <%--</ul>--%>
+      </li><!-- End Forms Nav -->
+
+     <%-- <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>General Tables</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-data.html">
+              <i class="bi bi-circle"></i><span>Data Tables</span>
+            </a>
+          </li>
+        </ul>
+      </li>--%><!-- End Tables Nav -->
+
+    <%--  <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="charts-chartjs.html">
+              <i class="bi bi-circle"></i><span>Chart.js</span>
+            </a>
+          </li>
+          <li>
+            <a href="charts-apexcharts.html">
+              <i class="bi bi-circle"></i><span>ApexCharts</span>
+            </a>
+          </li>
+          <li>
+            <a href="charts-echarts.html">
+              <i class="bi bi-circle"></i><span>ECharts</span>
+            </a>
+          </li>
+        </ul>
+      </li>--%><!-- End Charts Nav -->
+
+     <%-- <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="icons-bootstrap.html">
+              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-remix.html">
+              <i class="bi bi-circle"></i><span>Remix Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-boxicons.html">
+              <i class="bi bi-circle"></i><span>Boxicons</span>
+            </a>
+          </li>
+        </ul>
+      </li>--%><!-- End Icons Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <%--<li class="nav-item">
+        <a class="nav-link collapsed" href="pages-faq.html">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li>--%><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-contact.html">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="User Signup.aspx">
+          <i class="bi bi-card-list"></i>
+          <span>Sign Up</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="Sign In.aspx">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Sign In</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <%--<li class="nav-item">
+        <a class="nav-link collapsed" href="pages-error-404.html">
+          <i class="bi bi-dash-circle"></i>
+          <span>Error 404</span>
+        </a>
+      </li>--%><!-- End Error 404 Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="pages-blank.html">
+          <i class="bi bi-file-earmark"></i>
+          <span>Blank</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
-    </form>
-          
-         <!--  footer -->
-         <footer id="contact">
-            <div class="footer">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-4">
-                        <div class="titlepage">
-                           <h2>Contact Us</h2>
-                        </div>
-                     </div>
-                     <div class="col-md-8">
-                        <ul class="location_icon">
-                           <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locatins</li>
-                           <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 9087654321</li>
-                           <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-6">
-                        <form id="request" class="main_form">
-                           <div class="row">
-                              <div class="col-md-12 ">
-                                 <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
-                              </div>
-                              <div class="col-md-12">
-                                 <input class="contactus" placeholder="Email" type="type" name="Email"> 
-                              </div>
-                              <div class="col-md-12">
-                                 <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
-                              </div>
-                              <div class="col-md-12">
-                                 <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
-                              </div>
-                              <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                 <button class="send_btn">Send</button>
-                              </div>
-                              <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                 <ul class="social_icon">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="map">
-                           <figure><img src="images/map.jpg" alt="#"/></figure>
-                        </div>
-                        <form class="bottom_form">
-                           <h3>Newsletter</h3>
-                           <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                           <button class="sub_btn">subscribe</button>
-                        </form>
-                     </div>
-                  </div>
-               </div>
-               <div class="copyright">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <p>Copyright 2019 All Right Reserved By <a href="https://html.design/"> Free  html Templates</a></p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </footer>
-         <!-- end footer -->
-      </div>
-      <div class="overlay"></div>
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      <script type="text/javascript">
-          $(document).ready(function () {
-              $("#sidebar").mCustomScrollbar({
-                  theme: "minimal"
-              });
+ </form>
+    </div><!-- End Page Title -->
 
-              $('#dismiss, .overlay').on('click', function () {
-                  $('#sidebar').removeClass('active');
-                  $('.overlay').removeClass('active');
-              });
+    
 
-              $('#sidebarCollapse').on('click', function () {
-                  $('#sidebar').addClass('active');
-                  $('.overlay').addClass('active');
-                  $('.collapse.in').toggleClass('in');
-                  $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-              });
-          });
-      </script>
-      <script>
-          $(document).ready(function () {
-              $(".fancybox").fancybox({
-                  openEffect: "none",
-                  closeEffect: "none"
-              });
+  </main><!-- End #main -->
 
-              $(".zoom").hover(function () {
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright  All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by Tania
+    </div>
+  </footer><!-- End Footer -->
 
-                  $(this).addClass('transition');
-              }, function () {
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-                  $(this).removeClass('transition');
-              });
-          });
-      </script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
-
-
-
-
-
-
-
-  
 </body>
+
 </html>

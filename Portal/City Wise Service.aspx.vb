@@ -27,12 +27,12 @@ Public Class City_Wise_Service
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         Sadid.Items.Clear()
-        Sadid.Items.Add("--Select--")
+
         Sadid.DataTextField = "Title"
         Sadid.DataValueField = "Ad_id"
         Sadid.DataSource = dt
         Sadid.DataBind()
-
+        Sadid.Items.Insert(0, "--Select--")
     End Sub
     Public Sub bindcity()
         Dim str As String
@@ -42,12 +42,12 @@ Public Class City_Wise_Service
         Dim dt1 As DataTable = New DataTable
         sqlda.Fill(dt1)
         Scity.Items.Clear()
-        Scity.Items.Add("--Select--")
+
         Scity.DataTextField = "City_name"
         Scity.DataValueField = "City_id"
         Scity.DataSource = dt1
         Scity.DataBind()
-
+        Scity.Items.Insert(0, "--Select--")
     End Sub
 
 End Class

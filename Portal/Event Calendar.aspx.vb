@@ -29,11 +29,12 @@ Public Class Event_Calendar
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         eventbus.Items.Clear()
-        eventbus.Items.Add("--Select--")
+
         eventbus.DataTextField = "Business_name"
         eventbus.DataValueField = "Business_id"
         eventbus.DataSource = dt
         eventbus.DataBind()
+        eventbus.Items.Insert(0, "--Select--")
     End Sub
 
 End Class

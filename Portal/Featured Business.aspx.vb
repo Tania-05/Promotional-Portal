@@ -26,11 +26,12 @@ Public Class Featured_Business
         Dim dt As DataTable = New DataTable
         sqlda.Fill(dt)
         Fbus.Items.Clear()
-        Fbus.Items.Add("--Select--")
+
         Fbus.DataTextField = "Business_name"
         Fbus.DataValueField = "Business_id"
         Fbus.DataSource = dt
         Fbus.DataBind()
+        Fbus.Items.Insert(0, "--Select--")
     End Sub
 
     

@@ -1,8 +1,10 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data
+Imports System.IO
 Public Class Free_Ads
     Inherits System.Web.UI.Page
     Dim co As test = New test
+    Dim pth, filename As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
@@ -12,11 +14,18 @@ Public Class Free_Ads
 
     Protected Sub btfree_Click(sender As Object, e As EventArgs) Handles btfree.Click
         Dim instr As String
-        instr = "insert into free ads(Ad_id,Expiry_date)values('" + Freead.SelectedItem.Text + "','" + Freedate.Text + "')"
-        Dim cmduser As SqlCommand = New SqlCommand(instr, co.connect())
-        cmduser.ExecuteNonQuery()
-        Response.Write("<script>alert('data saved');</script>")
-        Freedate.Text = ""
+        If fp1.HasFile Then
+            filename = Path.GetFileName(fp1.PostedFile.FileName)
+            fp1.PostedFile.SaveAs(Server.MapPath("~/image1/") + filename)
+
+            pth = "~/image1/" + filename
+            instr = "insert into free_ads(Ad_id,Image_data,Description,Expiry_date)values('" + Freead.SelectedValue + "','" + pth + "','" + freed.Text + "','" + Freedate.Text + "')"
+            Dim cmduser As SqlCommand = New SqlCommand(instr, co.connect())
+            cmduser.ExecuteNonQuery()
+            Response.Write("<script>alert('data saved');</script>")
+        Else
+            Response.Write("<script>alert('Image Not Selected');</script>")
+        End If
     End Sub
     Public Sub bindAd()
         Dim str As String
@@ -31,6 +40,7 @@ Public Class Free_Ads
         Freead.DataValueField = "Ad_id"
         Freead.DataSource = dt
         Freead.DataBind()
+
     End Sub
 
     

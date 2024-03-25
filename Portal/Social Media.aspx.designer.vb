@@ -95,7 +95,7 @@ Partial Public Class Social_Media
     Protected WithEvents mcomment As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Button1 control.
+    '''btmedia control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
